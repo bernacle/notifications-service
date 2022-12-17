@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
 import { NotificationsRepository } from '../repositories/notifications-repository';
-import { NotificationNotFound } from './errors/notification-not-found';
 
 interface CountRecipientNotificationRequest {
   recipientId: string;
@@ -11,7 +10,7 @@ interface CountRecipientNotificationResponse {
 }
 
 @Injectable()
-export class CountRecipientNotification {
+export class CountRecipientNotifications {
   constructor(private notificationsRepository: NotificationsRepository) {}
 
   async execute(
